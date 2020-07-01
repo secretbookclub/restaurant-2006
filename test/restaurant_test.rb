@@ -5,35 +5,35 @@ require './lib/restaurant'
 class RestaurantTest < Minitest::Test
   # Iteration 1 Tests:
   def test_it_exists
-    restaurant = Restaurant.new('10:00', 'Fuel Cafe', 'plates')
+    restaurant = Restaurant.new('10:00', 'Fuel Cafe', 'spaghetti and meatballs')
 
     assert_instance_of Restaurant, restaurant
   end
 
   def test_it_has_opening_time
     # skip
-    restaurant = Restaurant.new('10:00', 'Fuel Cafe', 'plates')
+    restaurant = Restaurant.new('10:00', 'Fuel Cafe', 'eggplant parmesan')
 
     assert_equal '10:00', restaurant.opening_time
   end
 
   def test_it_has_name
     # skip
-    restaurant = Restaurant.new('10:00', 'Fuel Cafe', 'plates')
+    restaurant = Restaurant.new('10:00', 'Fuel Cafe', 'lasagna')
 
     assert_equal 'Fuel Cafe', restaurant.name
   end
 
   def test_it_has_dishes
     # skip
-    restaurant = Restaurant.new('10:00', 'Fuel Cafe', ['forks', 'knives'])
+    restaurant = Restaurant.new('10:00', 'Fuel Cafe', ['bow tie pasta', 'caesar salad'])
 
     assert_equal [], restaurant.dishes
   end
 
   #Iteration 2 Tests:
   def test_it_has_closing_time
-    # skip
+    skip
     restaurant1 = Restaurant.new('10:00', 'Fuel Cafe', 'glasses')
     restaurant2 = Restaurant.new('16:00', 'Il Poggio', 'spoons')
 
@@ -45,12 +45,12 @@ class RestaurantTest < Minitest::Test
   end
 
   def test_it_can_add_dishes
-    skip
-    restaurant = Restaurant.new('16:00', 'Il Poggio')
+    # skip
+    restaurant = Restaurant.new('16:00', 'Il Poggio', 'roasted chicken')
 
-    restaurant.add_dish('Burrata')
-    restaurant.add_dish('Pizzetta')
-    restaurant.add_dish('Ravioli')
+    restaurant.add_dishes('Burrata')
+    restaurant.add_dishes('Pizzetta')
+    restaurant.add_dishes('Ravioli')
 
     assert_equal ['Burrata', 'Pizzetta', 'Ravioli'], restaurant.dishes
   end

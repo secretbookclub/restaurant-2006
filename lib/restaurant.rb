@@ -14,6 +14,7 @@ class Restaurant
   def closing_time(close)
     @close = close
   end
+
 end
 
 # restaurant = Restaurant.new('10:00', 'Fuel Cafe', 'plates')
